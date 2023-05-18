@@ -43,7 +43,7 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p>New to toy shop <Link className='text-purple-800' to='/register'> please Register</Link></p>
+                        <p>New to toy shop ? <Link className='text-purple-800' to='/register'> Please Register</Link></p>
                     </div>
                 </div>
             </div>
