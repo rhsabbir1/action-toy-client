@@ -11,7 +11,7 @@ const Navber = () => {
     }
 
     const navItems = <>
-        <li><a>Home</a></li>
+        <li><Link to='/'>Home</Link></li>
         <li><a>About</a></li>
         <li><a>Toys</a></li>
     </>
