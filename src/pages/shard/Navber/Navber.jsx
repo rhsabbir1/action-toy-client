@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContex } from '../../../AuthProvider/AuthProvider';
 
 const Navber = () => {
+
+    const { user, logOut } = useContext(AuthContex)
+
+    const handleLogOut = () => {
+        logOut()
+    }
 
     const navItems = <>
         <li><a>Home</a></li>
@@ -32,7 +39,20 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login' className="btn">Log in</Link>
+                {
+                    user ? <>
+                        <div className="avatar mr-4 online">
+                            <div className="w-14 rounded-full ">
+                                <img src={user.photoURL} />
+                            </div>
+                        </div>
+
+                        <button className="btn" onClick={handleLogOut}>Log Out</button>
+                    </>
+                        :
+                        <Link to='/login' className="btn">Log in</Link>
+
+                }
             </div>
         </div>
     );
