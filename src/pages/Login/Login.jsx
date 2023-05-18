@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Lottie from "lottie-react";
 import animation from '../../../public/107385-login.json'
 import { AuthContex } from '../../AuthProvider/AuthProvider';
@@ -7,6 +7,12 @@ import { AuthContex } from '../../AuthProvider/AuthProvider';
 const Login = () => {
     const [error , setError] = useState('')
     const {logIn} = useContext(AuthContex)
+
+    const location = useLocation()
+    let navigate = useNavigate()
+   
+
+    const from = location?.state?.from?.pathname || "/";
 
     const handleLogin = event =>{
         event.preventDefault()
@@ -16,7 +22,8 @@ const Login = () => {
         logIn(email , password)
         .then(result=>{
             const logUser = result.user;
-            console.log(logUser)
+            navigate(from , {replace : true})
+            
         })
         .catch(err =>{
             const error = err.message;
