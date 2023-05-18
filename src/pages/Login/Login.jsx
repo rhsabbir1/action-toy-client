@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Lottie from "lottie-react";
 import animation from '../../../public/107385-login.json'
+import { AuthContex } from '../../AuthProvider/AuthProvider';
 
 const Login = () => {
+    const [error , setError] = useState('')
+    const {logIn} = useContext(AuthContex)
 
     const handleLogin = event =>{
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-
-        console.log(email, password )
+        logIn(email , password)
+        .then(result=>{
+            const logUser = result.user;
+            console.log(logUser)
+        })
+        .catch(err =>{
+            const error = err.message;
+            setError(error)
+            
+        })
     }
 
 
@@ -43,6 +54,7 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
+                        <p className='text-center text-red-600'>{error}</p>
                         <p>New to toy shop ? <Link className='text-purple-800' to='/register'> Please Register</Link></p>
                     </div>
                 </div>
