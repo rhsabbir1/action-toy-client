@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Lottie from "lottie-react";
 import animation from '../../../public/107385-login.json'
+import { AuthContex } from '../../AuthProvider/AuthProvider';
 
 
 const Register = () => {
+    const [ error , setError] = useState('')
+
+    const {register ,profail} = useContext(AuthContex)
 
     const handleRegister = event =>{
         event.preventDefault()
+        setError('')
         const form = event.target;
         const name = form.name.value;
         const photoUrl = form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value;
+        register(name, photoUrl , email , password)
+        .then(result =>{
+            const creatUser = result.user;
+            profail(name , photoUrl)
+            console.log(creatUser)
+            form.reset()
+        })
+        .catch(err =>{
+            const error = err.message
+            setError(error)
+        })
 
         console.log(name , photoUrl,email, password )
     }
@@ -58,6 +74,7 @@ const Register = () => {
                                 <input className="btn btn-primary" type="submit" value="Register" />
                             </div>
                         </form>
+                        <p className='text-center text-red-600'>{error}</p>
                         <p>Already have an account ? <Link className='text-purple-800' to='/login'> Please log in</Link></p>
                     </div>
                 </div>
