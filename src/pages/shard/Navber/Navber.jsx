@@ -12,7 +12,7 @@ const Navber = () => {
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/blogs'>All Toys</Link></li>
+        <li><Link to='/allToys'>All Toys</Link></li>
         <li><Link to='/mytoys'>My Toys</Link></li>
         <li><Link to='/addAtoy'>Add A Toy</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
