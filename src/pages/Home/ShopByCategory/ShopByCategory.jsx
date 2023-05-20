@@ -21,10 +21,10 @@ const ShopByCategory = () => {
                 <Tabs>
                     <TabList >
 
-                        <Tab><button onClick={() => setCatagory("")}>All toys</button></Tab>
-                        <Tab><button onClick={() => setCatagory('Marvel')}>Marvel</button></Tab>
-                        <Tab><button onClick={() => setCatagory('Avengers')}>Avengers</button></Tab>
-                        <Tab><button onClick={() => setCatagory('star wars')}>Star wars</button></Tab>
+                        <Tab className='btn btn-outline mr-1' ><button onClick={() => setCatagory("")}>All toys</button></Tab>
+                        <Tab className='btn btn-outline mr-1' ><button onClick={() => setCatagory('Marvel')}>Marvel</button></Tab>
+                        <Tab className='btn btn-outline mr-1' ><button onClick={() => setCatagory('Avengers')}>Avengers</button></Tab>
+                        <Tab className='btn btn-outline mr-1' ><button onClick={() => setCatagory('star wars')}>Star wars</button></Tab>
                     </TabList>
 
                     <TabPanel>
