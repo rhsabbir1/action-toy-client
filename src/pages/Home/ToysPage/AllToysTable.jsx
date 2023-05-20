@@ -1,16 +1,15 @@
 import React from 'react';
 
 const AllToysTable = ({ toy }) => {
-    const {saller, name, sub_category, Price , quantity } = toy;
+    const {seller, toyname, sub_category, price , quantity } = toy;
     return (
         <tr>
-            <th>{saller}</th>
-            <th>{name}</th>
+            <th>{seller}</th>
+            <th>{toyname}</th>
             <td>{sub_category}</td>
-            <td>{Price}</td>
+            <td>{price}</td>
             <td>{quantity}</td>
-            <td><button className='btn btn-outline'>View Details </button></td>
-            
+            <td><button className='btn btn-outline'>View Details</button></td>   
         </tr>
     );
 };
