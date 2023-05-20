@@ -18,12 +18,12 @@ const Register = () => {
         const photoUrl = form.photoUrl.value;
         const email = form.email.value;
         const password = form.password.value;
-        register(name, photoUrl , email , password)
+        register(email , password)
         .then(result =>{
             const creatUser = result.user;
             profail(name , photoUrl)
             console.log(creatUser)
-            form.reset()
+            // form.reset()
         })
         .catch(err =>{
             const error = err.message

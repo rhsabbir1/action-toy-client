@@ -8,12 +8,16 @@ const MyToys = () => {
     const { user } = useContext(AuthContex)
     const [myToys, setMyToys] = useState([])
 
+
+    const url = (`http://localhost:5000/product?sellerEmail=${user?.email}`)
     useEffect(() => {
-        fetch(`http://localhost:5000/products/?sellerEmail=${user.email}`)
+        fetch(url)
+        
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [user])
-
+    
+    
     const handleDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -46,6 +50,11 @@ const MyToys = () => {
             })
     }
 
+
+    const handleUpdate = id=>{
+
+    }
+
     return (
         <div>
             <div className='grid grid-cols-2 md:grid-cols-3 w-4/5 mx-auto'>
@@ -53,6 +62,7 @@ const MyToys = () => {
                     myToys.map(toy => <ShowMyToys
                         key={toy._id}
                         toy={toy}
+                        handleUpdate={handleUpdate}
                         handleDelete={handleDelete}
                     ></ShowMyToys>)
                 }
