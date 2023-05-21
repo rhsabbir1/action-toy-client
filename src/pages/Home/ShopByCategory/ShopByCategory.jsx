@@ -5,7 +5,7 @@ import ToyCart from './ToyCart';
 
 const ShopByCategory = () => {
     const [toys, setToys] = useState([])
-    const [catagory, setCatagory] = useState("abc")
+    const [catagory, setCatagory] = useState("Marvel")
 
 
     useEffect(() => {
@@ -20,8 +20,6 @@ const ShopByCategory = () => {
             <div className='text-center p-16'>
                 <Tabs>
                     <TabList >
-
-                        <Tab className='btn btn-outline mr-1' ><button onClick={() => setCatagory("")}>All toys</button></Tab>
                         <Tab className='btn btn-outline mr-1' ><button onClick={() => setCatagory('Marvel')}>Marvel</button></Tab>
                         <Tab className='btn btn-outline mr-1' ><button onClick={() => setCatagory('Avengers')}>Avengers</button></Tab>
                         <Tab className='btn btn-outline mr-1' ><button onClick={() => setCatagory('star wars')}>Star wars</button></Tab>
