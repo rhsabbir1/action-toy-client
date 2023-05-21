@@ -9,7 +9,7 @@ const ShopByCategory = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${catagory}`)
+        fetch(`https://action-figure-toys-server.vercel.app/products/${catagory}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [catagory])

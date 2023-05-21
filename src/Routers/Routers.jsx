@@ -10,6 +10,7 @@ import AddAToys from "../pages/Home/ToysPage/AddAToys";
 import MyToys from "../pages/Home/ToysPage/MyToys";
 import AllToys from "../pages/Home/ToysPage/AllToys";
 import ToyUpdate from "../pages/Home/ToysPage/ToyUpdate";
+import Details from "../pages/Details/Details";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,11 @@ const router = createBrowserRouter([
                 path:'mytoys',
                 element:<PrivateRoute><MyToys></MyToys></PrivateRoute>
             },
+            {
+                path:'details/:id',
+                element:<PrivateRoute><Details></Details></PrivateRoute>,
+                loader:({params}) => fetch(`https://action-figure-toys-server.vercel.app/update/${params.id}`)
+            },
            
             {
                 path: 'login',
@@ -49,7 +55,7 @@ const router = createBrowserRouter([
             ,{
                 path:'update/:id',
                 element:<ToyUpdate></ToyUpdate>,
-                loader:({params}) => fetch(`http://localhost:5000/update/${params.id}`)
+                loader:({params}) => fetch(`https://action-figure-toys-server.vercel.app/update/${params.id}`)
             }
         ]
     }

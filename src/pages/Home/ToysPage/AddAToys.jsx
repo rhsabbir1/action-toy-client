@@ -34,7 +34,7 @@ const AddAToys = () => {
             description
         }
 
-        fetch('http://localhost:5000/products',{
+        fetch('https://action-figure-toys-server.vercel.app/products',{
             method:"POST",
             headers:{
                 'content-type':'application/json'
@@ -68,7 +68,7 @@ const AddAToys = () => {
                             <label className="label">
                                 <span className=" text-white font-semibold">Toy Name</span>
                             </label>
-                            <input type="text" name='toyName' placeholder="Toy Name" className="input input-bordered" />
+                            <input type="text" name='toyName' placeholder="Toy Name" className="input input-bordered" required />
                         </div>
 
 
@@ -76,7 +76,7 @@ const AddAToys = () => {
                             <label className="label">
                                 <span className=" text-white font-semibold">Seller name</span>
                             </label>
-                            <input type="text" name='seller' defaultValue={user.displayName} placeholder="Seller name" className="input input-bordered" />
+                            <input required type="text" name='seller' defaultValue={user.displayName} placeholder="Seller name" className="input input-bordered" />
 
                         </div>
 
@@ -84,42 +84,42 @@ const AddAToys = () => {
                             <label className="label">
                                 <span className=" text-white font-semibold">Picture URL</span>
                             </label>
-                            <input type="text" name='pictureURL' placeholder="Seller name" className="input input-bordered" />
+                            <input required type="text" name='pictureURL' placeholder="Seller name" className="input input-bordered" />
 
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className=" text-white font-semibold">Seller email</span>
                             </label>
-                            <input type="text" name='email'  defaultValue={user?.email} placeholder='Seller Email' className="input input-bordered" />
+                            <input required type="text" name='email'  defaultValue={user?.email} placeholder='Seller Email' className="input input-bordered" />
                         </div>
 
                         <div className="form-control">
                             <label className="label">
                                 <span className=" text-white font-semibold">Sub Category</span>
                             </label>
-                            <input type="text" name='sub_category'  className="input input-bordered" placeholder='Sub Category'/>
+                            <input required type="text" name='sub_category'  className="input input-bordered" placeholder='Sub Category'/>
                         </div>
 
                         <div className="form-control">
                             <label className="label">
                                 <span className=" text-white font-semibold">Price</span>
                             </label>
-                            <input type="text" name='price'  className="input input-bordered" placeholder='Price'/>
+                            <input required  type="text" name='price'  className="input input-bordered" placeholder='Price'/>
                         </div>
 
                         <div className="form-control">
                             <label className="label">
                                 <span className=" text-white font-semibold">Rating</span>
                             </label>
-                            <input type="text" name='rating'  className="input input-bordered" placeholder='Rating'/>
+                            <input required type="text" name='rating'  className="input input-bordered" placeholder='Rating'/>
                         </div>
 
                         <div className="form-control">
                             <label className="label">
                                 <span className=" text-white font-semibold">Available quantity</span>
                             </label>
-                            <input type="text" name='quantity'  className="input input-bordered" placeholder='Available quantity'/>
+                            <input required type="text" name='quantity'  className="input input-bordered" placeholder='Available quantity'/>
                         </div>
 
                     </div>
