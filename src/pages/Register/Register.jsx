@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Lottie from "lottie-react";
 import animation from '../../../public/107385-login.json'
 import { AuthContex } from '../../AuthProvider/AuthProvider';
@@ -7,6 +7,7 @@ import { AuthContex } from '../../AuthProvider/AuthProvider';
 
 const Register = () => {
     const [ error , setError] = useState('')
+    const navigate = useNavigate()
 
     const {register ,profail} = useContext(AuthContex)
 
@@ -23,7 +24,8 @@ const Register = () => {
             const creatUser = result.user;
             profail(name , photoUrl)
             console.log(creatUser)
-            // form.reset()
+            navigate('/')
+            form.reset()
         })
         .catch(err =>{
             const error = err.message

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContex } from '../../../AuthProvider/AuthProvider';
+// https://i.ibb.co/vs1fpsM/down.jpg
 
 const Navber = () => {
 
@@ -16,7 +17,7 @@ const Navber = () => {
         <li><Link to='/mytoys'>My Toys</Link></li>
         <li><Link to='/addAtoy'>Add A Toy</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
-        
+
         {/* , ,  */}
     </>
 
@@ -35,7 +36,10 @@ const Navber = () => {
 
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">Action Toy</Link>
+                <div className='flex justify-center items-center'>
+                    <img className='rounded-lg w-16 bg-slate-800' src="https://i.ibb.co/vs1fpsM/down.jpg" alt="" />
+                    <Link to='/' className="btn btn-ghost normal-case text-xl">Hot Toys</Link>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

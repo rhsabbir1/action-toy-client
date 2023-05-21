@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ShowMyToys = ({toy, handleDelete,handleUpdate} ) => {
+const ShowMyToys = ({toy, handleDelete} ) => {
     const { _id, img, name, price, rating } = toy;
     return (
         <div className='m-6'>
