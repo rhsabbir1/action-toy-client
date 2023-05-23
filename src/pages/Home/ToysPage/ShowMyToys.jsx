@@ -11,7 +11,7 @@ const ShowMyToys = ({toy, handleDelete} ) => {
                 <h2 className="card-title">{name}</h2>
                 <p className='text-left font-semibold'>Price : $ {price}</p>
                 <p className='text-left font-semibold'>Rating :{rating}</p>
-               <button className='text-left font-semibold btn btn-outline'><Link to={`/update/${_id}`}>Edit</Link></button>
+                <Link className='text-left font-semibold btn btn-outline' to={`/update/${_id}`}><button >Edit</button></Link>
                <button onClick={()=>handleDelete(_id)} className='text-left font-semibold btn btn-outline'>Delete</button>
             </div>
         </div>

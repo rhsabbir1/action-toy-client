@@ -37,7 +37,7 @@ const ShopByCategory = () => {
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <div className='grid grid-cols-1 md:grid-cols-2 w-4/5 mx-auto'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 w-4/5 mx-auto'>
                             {
                                 toys.map(toy => <ToyCart
                                     key={toy._id}
@@ -51,7 +51,7 @@ const ShopByCategory = () => {
 
 
                     <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-2 w-4/5 mx-auto'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 w-4/5 mx-auto'>
                             {
                                 toys.map(toy => <ToyCart
                                     key={toy._id}
@@ -62,7 +62,7 @@ const ShopByCategory = () => {
                         </div>
                     </TabPanel>
                     <TabPanel>
-                    <div className='grid grid-cols-1 md:grid-cols-2 w-4/5 mx-auto'>
+                    <div className='grid grid-cols-1 md:grid-cols-3 w-4/5 mx-auto'>
                             {
                                 toys.map(toy => <ToyCart
                                     key={toy._id}

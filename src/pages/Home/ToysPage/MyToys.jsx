@@ -12,12 +12,12 @@ const MyToys = () => {
     const url = (`https://action-figure-toys-server.vercel.app/product?sellerEmail=${user?.email}`)
     useEffect(() => {
         fetch(url)
-        
+
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [user])
-    
-    
+
+
     const handleDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -29,29 +29,33 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         })
             .then((result) => {
-                fetch(`https://action-figure-toys-server.vercel.app/products/${id}`, {
-                    method: "DELETE"
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.deletedCount > 0) {
-
-                            if (result.isConfirmed) {
+                if (result.isConfirmed) {
+                    fetch(`https://action-figure-toys-server.vercel.app/products/${id}`, {
+                        method: "DELETE"
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data)
+                            if (data.deletedCount > 0) {
                                 Swal.fire(
                                     'Deleted!',
-                                    'Your toy has been deleted.',
+                                    'Your coffe has been deleted.',
                                     'success'
                                 )
                             }
-                        }
-                        let remaining =  myToys.filter(toys => toys._id !== id)
-                        setMyToys(remaining)
-                    })
+
+                        })
+                    let remaining = myToys.filter(toys => toys._id !== id)
+                    setMyToys(remaining)
+                }
+
+
             })
+
     }
 
 
-    const handleUpdate = id=>{
+    const handleUpdate = id => {
 
     }
 
